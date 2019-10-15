@@ -1,8 +1,6 @@
 package main
 
 import (
-	"encoding/hex"
-	"fmt"
 	"log"
 	"net"
 
@@ -47,13 +45,6 @@ func handleConnection(c *conn.Connection) {
 			}
 		case packet.LegacyHandshakeIn:
 			{
-				fmt.Println(hex.Dump(packet.LegacyHandshakePacket{
-					Protocol:         74,
-					MinecraftVersion: "1.8.7",
-					MOTD:             "A Minecraft Server",
-					Players:          0,
-					MaxPlayers:       20,
-				}.Encode()))
 				c.Write(packet.LegacyHandshakePacket{
 					Protocol:         74,
 					MinecraftVersion: "ur gay",
